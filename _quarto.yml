@@ -1,0 +1,72 @@
+project:
+  type: website
+
+website:
+  site-url: https://ninjalabo.github.io/
+  repo-url: https://github.com/ninjalabo/ninjalabo.github.io
+  repo-actions: [edit, issue]
+  page-navigation: true
+  title: "NinjaLABO"
+  image: "images/logo.png"
+  favicon: "images/favicon.png"
+  page-footer: "Copyright 2023-2024, NinjaLABO"
+  twitter-card: true
+  navbar:
+    background: dark
+    logo: "images/favicon.png"
+    logo-alt: "NinjaLABO log."
+    title: false
+    search: true
+    left:
+      - href: index.qmd
+        text: "Overview"
+      - href: features.qmd
+        text: "Features"
+      - href: price.qmd
+        text: "Price"
+      - href: blog.qmd
+        text: "Blog"
+      - href: hello.ipynb
+        text: "Test"
+    right:
+      - icon: twitter
+        href: https://twitter.com/ninjalabo
+      - icon: github
+        menu:
+          - text: Source Code
+            href: https://github.com/ninjalabo/ninjalabo.github.io
+          - text: Report a Bug
+            href: https://github.com/ninjalabo/ninjalabo.github.io/issues
+
+  sidebar:
+    - title: "Features"
+      style: "docked"
+      search: true
+      contents: 
+        - about.qmd
+        - features.qmd
+        # navigation items
+    - title: "Price"
+      style: "docked"
+      search: true
+      contents: 
+        - price.qmd
+        # navigation items
+    - title: "Blog"
+      style: "docked"
+      search: true
+      contents: 
+        - blog.qmd
+        # navigation items
+    - title: "Test"
+      style: "docked"
+      search: true
+      contents:
+        - hello.ipynb
+        # navigation items
+
+format:
+  html:
+    theme: solar
+    css: styles.css
+    toc: true
