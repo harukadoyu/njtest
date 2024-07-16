@@ -14,6 +14,11 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+      - name: Execute Jupyter Notebook
+        run: |
+          # Execute hello.ipynb
+          jupyter nbconvert --execute hello.ipynb --to notebook --output hello.ipynb
+
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
