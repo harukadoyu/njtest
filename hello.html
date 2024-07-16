@@ -249,9 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="polar-axis" class="level2">
 <h2 class="anchored" data-anchor-id="polar-axis">Polar Axis</h2>
 <p>For a demonstration of a line plot on a polar axis, see <a href="#fig-polar" class="quarto-xref">Figure&nbsp;1</a>.</p>
-<div id="fig-polar" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-16T05:56:05.075831Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-16T05:56:05.075554Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-16T05:56:05.474047Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-16T05:56:05.473820Z&quot;}">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="cell-fig-polar" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-16T06:07:02.951435Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-16T06:07:02.951231Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-16T06:07:03.928540Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-16T06:07:03.927900Z&quot;}" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -265,11 +263,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#df_trq = df[df["Runtime"]=="tinyRuntime"].loc[df["Quantization"]==True]</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.plot(df_pytorch[<span class="st">"Commit"</span>], df_pytorch[<span class="st">"Accuracy"</span>], <span class="st">"o"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-display">
+<div id="fig-polar" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="hello_files/figure-html/fig-polar-output-1.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A line plot on a polar axis
 </figcaption>
 </figure>
+</div>
+</div>
 </div>
 
 
