@@ -11,7 +11,7 @@
     "href": "hello.html",
     "title": "Quarto Basics",
     "section": "",
-    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\n\n\nCode\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load CSV file into DataFrame\ndf = pd.read_csv('benchmark.csv')\n\ndf_pytorch = df[df[\"Runtime\"]==\"PyTorch\"]\ndf_trv = df[df[\"Runtime\"]==\"tinyRuntime\"].loc[df[\"Quantization\"]==False]\ndf_trq = df[df[\"Runtime\"]==\"tinyRuntime\"].loc[df[\"Quantization\"]==True]\n\n\n\nFigure 1\n\n\n\n\n\nCode\nplt.plot(df_pytorch[\"Commit\"], df_pytorch[\"Accuracy\"], \"o\")",
+    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\n\n\nCode\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load CSV file into DataFrame\ndf = pd.read_csv('benchmark.csv')\n\ndf_pytorch = df[df[\"Runtime\"]==\"PyTorch\"]\n#df_trv = df[df[\"Runtime\"]==\"tinyRuntime\"].loc[df[\"Quantization\"]==False]\n#df_trq = df[df[\"Runtime\"]==\"tinyRuntime\"].loc[df[\"Quantization\"]==True]\nplt.plot(df_pytorch[\"Commit\"], df_pytorch[\"Accuracy\"], \"o\")\n\n\n\nFigure 1",
     "crumbs": [
       "Test",
       "Quarto Basics"
@@ -22,7 +22,7 @@
     "href": "hello.html#polar-axis",
     "title": "Quarto Basics",
     "section": "",
-    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\n\n\nCode\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load CSV file into DataFrame\ndf = pd.read_csv('benchmark.csv')\n\ndf_pytorch = df[df[\"Runtime\"]==\"PyTorch\"]\ndf_trv = df[df[\"Runtime\"]==\"tinyRuntime\"].loc[df[\"Quantization\"]==False]\ndf_trq = df[df[\"Runtime\"]==\"tinyRuntime\"].loc[df[\"Quantization\"]==True]\n\n\n\nFigure 1\n\n\n\n\n\nCode\nplt.plot(df_pytorch[\"Commit\"], df_pytorch[\"Accuracy\"], \"o\")",
+    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\n\n\nCode\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load CSV file into DataFrame\ndf = pd.read_csv('benchmark.csv')\n\ndf_pytorch = df[df[\"Runtime\"]==\"PyTorch\"]\n#df_trv = df[df[\"Runtime\"]==\"tinyRuntime\"].loc[df[\"Quantization\"]==False]\n#df_trq = df[df[\"Runtime\"]==\"tinyRuntime\"].loc[df[\"Quantization\"]==True]\nplt.plot(df_pytorch[\"Commit\"], df_pytorch[\"Accuracy\"], \"o\")\n\n\n\nFigure 1",
     "crumbs": [
       "Test",
       "Quarto Basics"
