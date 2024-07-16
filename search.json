@@ -1,20 +1,17 @@
 [
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Compress your AI model",
     "section": "",
-    "text": "IREE review\n\n\n\n\n\nSome description\n\n\n\n\n\nNov 7, 2024\n\n\nHaruka Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nAI compression SaaS\n\n\n\n\n\nBrief overview of AI Compression\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML Use Cases\n\n\n\n\n\nUse cases for TinyML offered by NinjaLABO\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Blog"
-    ]
+    "text": "Compress your AI model\nwith tinyMLaaS\nUpload your AI model on device for efficient run to save your costs, time, and cloud space\n\nGet Started See Demo\n\n\n\n\n\n\nRun by NinjaLABO.\nNext\nnext"
   },
   {
     "objectID": "hello.html",
     "href": "hello.html",
     "title": "Quarto Basics",
     "section": "",
-    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis",
+    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ndata = np.loadtxt(\"test.txt\", delimiter=\",\")\nplt.plot(data)\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis",
     "crumbs": [
       "Test",
       "Quarto Basics"
@@ -25,18 +22,71 @@
     "href": "hello.html#polar-axis",
     "title": "Quarto Basics",
     "section": "",
-    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis",
+    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ndata = np.loadtxt(\"test.txt\", delimiter=\",\")\nplt.plot(data)\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis",
     "crumbs": [
       "Test",
       "Quarto Basics"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Compress your AI model",
+    "objectID": "blogs/aicompressionsaas.html",
+    "href": "blogs/aicompressionsaas.html",
+    "title": "AI compression SaaS",
     "section": "",
-    "text": "Compress your AI model\nwith tinyMLaaS\nUpload your AI model on device for efficient run to save your costs, time, and cloud space\n\nGet Started See Demo\n\n\n\n\n\n\nRun by NinjaLABO.\nNext\nnext"
+    "text": "Hiroshi Doyu &lt;hiroshi.doyu@ninjalabo.ai&gt;, 2nd July, 2024"
+  },
+  {
+    "objectID": "blogs/aicompressionsaas.html#the-need-for-ai-compression",
+    "href": "blogs/aicompressionsaas.html#the-need-for-ai-compression",
+    "title": "AI compression SaaS",
+    "section": "The Need for AI Compression",
+    "text": "The Need for AI Compression\nAI models, especially deep learning networks, have become increasingly complex and resource-intensive. Traditional deployment of these models on edge devices, such as smartphones, IoT sensors, and embedded systems, poses significant challenges due to limited computational power, memory, and energy resources. AI compression techniques, including model pruning, quantization, and knowledge distillation, aim to reduce the size and computational requirements of AI models without significantly compromising their performance."
+  },
+  {
+    "objectID": "blogs/aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
+    "href": "blogs/aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
+    "title": "AI compression SaaS",
+    "section": "Benefits of AI Compression as-a-Service",
+    "text": "Benefits of AI Compression as-a-Service\n\nResource Optimization: ACaaS allows businesses to deploy AI models on edge devices with constrained resources, ensuring efficient utilization of hardware capabilities.\nScalability: By leveraging cloud-based AI compression services, organizations can scale their AI deployments seamlessly, catering to diverse applications and devices.\nCost-Effectiveness: Reduced model sizes and lower computational demands translate to cost savings in terms of hardware investment and energy consumption.\nFaster Inference: Compressed models enable faster inference times, critical for real-time applications such as autonomous vehicles, surveillance, and industrial automation.\nEnhanced Security: Processing data locally on edge devices minimizes data transfer to the cloud, enhancing data privacy and security."
+  },
+  {
+    "objectID": "blogs/aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
+    "href": "blogs/aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
+    "title": "AI compression SaaS",
+    "section": "TinyML as-a-Service: Empowering the Internet of Things",
+    "text": "TinyML as-a-Service: Empowering the Internet of Things\nTinyMLaaS extends the concept of AI compression to the domain of microcontrollers and other ultra-low-power devices. By providing pre-trained, compressed AI models and tools for deploying them on TinyML platforms, this service empowers developers to create intelligent applications for the Internet of Things (IoT).\n\nKey Features of TinyMLaaS\n\nPre-trained Models: Access to a library of pre-trained, optimized models for various applications, from anomaly detection to image recognition.\nDeployment Tools: Comprehensive toolchains for converting, optimizing, and deploying models on TinyML hardware, simplifying the development process.\nCustom Solutions: Tailored AI solutions for specific use cases, ensuring optimal performance and efficiency.\nSeamless Integration: Easy integration with existing IoT ecosystems, enabling rapid deployment and scaling of intelligent applications."
+  },
+  {
+    "objectID": "blogs/aicompressionsaas.html#applications-and-use-cases",
+    "href": "blogs/aicompressionsaas.html#applications-and-use-cases",
+    "title": "AI compression SaaS",
+    "section": "Applications and Use Cases",
+    "text": "Applications and Use Cases\n\nSmart Home Devices: Enhancing the capabilities of home automation systems with intelligent voice assistants, security cameras, and energy management solutions.\nIndustrial IoT: Enabling predictive maintenance, quality control, and automation in manufacturing and logistics.\nHealthcare: Providing real-time monitoring and diagnostics through wearable devices and smart medical equipment.\nAgriculture: Facilitating precision farming with AI-powered sensors for soil health, weather conditions, and crop monitoring."
+  },
+  {
+    "objectID": "blogs/aicompressionsaas.html#conclusion",
+    "href": "blogs/aicompressionsaas.html#conclusion",
+    "title": "AI compression SaaS",
+    "section": "Conclusion",
+    "text": "Conclusion\nAI Compression as-a-Service and TinyML as-a-Service represent the next frontier in AI deployment, bridging the gap between advanced AI capabilities and resource-constrained edge devices. By offering scalable, efficient, and cost-effective solutions, these services empower a wide range of industries to harness the power of AI, driving innovation and transforming the way we interact with technology.\nAs the demand for edge computing continues to grow, ACaaS and TinyMLaaS will play a crucial role in shaping the future of AI, making intelligent applications more accessible and ubiquitous than ever before."
+  },
+  {
+    "objectID": "blogs/iree.html",
+    "href": "blogs/iree.html",
+    "title": "IREE review",
+    "section": "",
+    "text": "IREE Review\nImportant review…"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "NinjaLABO is specialized at compressing AI models (DNN models) along with optimized tinyRuntime via our SaaS platform.",
+    "crumbs": [
+      "Features",
+      "About"
+    ]
   },
   {
     "objectID": "blogs/tinymlusecases.html",
@@ -88,63 +138,13 @@
     "text": "Data Types: Video feeds, audio recordings, motion sensor data.\nUse Cases: Intrusion detection, anomaly detection, crowd monitoring.\n\nAdvantage: Local data execution enhances security by reducing the need to transmit sensitive data, mitigating potential breaches.\n\n\nThese examples highlight the broad applicability of NinjaLABO’s solutions. By focusing on specific use cases within these industries, NinjaLABO can tailor its services to meet the unique needs and challenges of each sector, providing efficient, scalable, and impactful TinyML solutions."
   },
   {
-    "objectID": "blogs/iree.html",
-    "href": "blogs/iree.html",
-    "title": "IREE review",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "IREE Review\nImportant review…"
-  },
-  {
-    "objectID": "blogs/aicompressionsaas.html",
-    "href": "blogs/aicompressionsaas.html",
-    "title": "AI compression SaaS",
-    "section": "",
-    "text": "Hiroshi Doyu &lt;hiroshi.doyu@ninjalabo.ai&gt;, 2nd July, 2024"
-  },
-  {
-    "objectID": "blogs/aicompressionsaas.html#the-need-for-ai-compression",
-    "href": "blogs/aicompressionsaas.html#the-need-for-ai-compression",
-    "title": "AI compression SaaS",
-    "section": "The Need for AI Compression",
-    "text": "The Need for AI Compression\nAI models, especially deep learning networks, have become increasingly complex and resource-intensive. Traditional deployment of these models on edge devices, such as smartphones, IoT sensors, and embedded systems, poses significant challenges due to limited computational power, memory, and energy resources. AI compression techniques, including model pruning, quantization, and knowledge distillation, aim to reduce the size and computational requirements of AI models without significantly compromising their performance."
-  },
-  {
-    "objectID": "blogs/aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
-    "href": "blogs/aicompressionsaas.html#benefits-of-ai-compression-as-a-service",
-    "title": "AI compression SaaS",
-    "section": "Benefits of AI Compression as-a-Service",
-    "text": "Benefits of AI Compression as-a-Service\n\nResource Optimization: ACaaS allows businesses to deploy AI models on edge devices with constrained resources, ensuring efficient utilization of hardware capabilities.\nScalability: By leveraging cloud-based AI compression services, organizations can scale their AI deployments seamlessly, catering to diverse applications and devices.\nCost-Effectiveness: Reduced model sizes and lower computational demands translate to cost savings in terms of hardware investment and energy consumption.\nFaster Inference: Compressed models enable faster inference times, critical for real-time applications such as autonomous vehicles, surveillance, and industrial automation.\nEnhanced Security: Processing data locally on edge devices minimizes data transfer to the cloud, enhancing data privacy and security."
-  },
-  {
-    "objectID": "blogs/aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
-    "href": "blogs/aicompressionsaas.html#tinyml-as-a-service-empowering-the-internet-of-things",
-    "title": "AI compression SaaS",
-    "section": "TinyML as-a-Service: Empowering the Internet of Things",
-    "text": "TinyML as-a-Service: Empowering the Internet of Things\nTinyMLaaS extends the concept of AI compression to the domain of microcontrollers and other ultra-low-power devices. By providing pre-trained, compressed AI models and tools for deploying them on TinyML platforms, this service empowers developers to create intelligent applications for the Internet of Things (IoT).\n\nKey Features of TinyMLaaS\n\nPre-trained Models: Access to a library of pre-trained, optimized models for various applications, from anomaly detection to image recognition.\nDeployment Tools: Comprehensive toolchains for converting, optimizing, and deploying models on TinyML hardware, simplifying the development process.\nCustom Solutions: Tailored AI solutions for specific use cases, ensuring optimal performance and efficiency.\nSeamless Integration: Easy integration with existing IoT ecosystems, enabling rapid deployment and scaling of intelligent applications."
-  },
-  {
-    "objectID": "blogs/aicompressionsaas.html#applications-and-use-cases",
-    "href": "blogs/aicompressionsaas.html#applications-and-use-cases",
-    "title": "AI compression SaaS",
-    "section": "Applications and Use Cases",
-    "text": "Applications and Use Cases\n\nSmart Home Devices: Enhancing the capabilities of home automation systems with intelligent voice assistants, security cameras, and energy management solutions.\nIndustrial IoT: Enabling predictive maintenance, quality control, and automation in manufacturing and logistics.\nHealthcare: Providing real-time monitoring and diagnostics through wearable devices and smart medical equipment.\nAgriculture: Facilitating precision farming with AI-powered sensors for soil health, weather conditions, and crop monitoring."
-  },
-  {
-    "objectID": "blogs/aicompressionsaas.html#conclusion",
-    "href": "blogs/aicompressionsaas.html#conclusion",
-    "title": "AI compression SaaS",
-    "section": "Conclusion",
-    "text": "Conclusion\nAI Compression as-a-Service and TinyML as-a-Service represent the next frontier in AI deployment, bridging the gap between advanced AI capabilities and resource-constrained edge devices. By offering scalable, efficient, and cost-effective solutions, these services empower a wide range of industries to harness the power of AI, driving innovation and transforming the way we interact with technology.\nAs the demand for edge computing continues to grow, ACaaS and TinyMLaaS will play a crucial role in shaping the future of AI, making intelligent applications more accessible and ubiquitous than ever before."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "NinjaLABO is specialized at compressing AI models (DNN models) along with optimized tinyRuntime via our SaaS platform.",
+    "text": "IREE review\n\n\n\n\n\nSome description\n\n\n\n\n\nNov 7, 2024\n\n\nHaruka Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nAI compression SaaS\n\n\n\n\n\nBrief overview of AI Compression\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\n\n\n\n\n\n\nTinyML Use Cases\n\n\n\n\n\nUse cases for TinyML offered by NinjaLABO\n\n\n\n\n\nJul 2, 2024\n\n\nHiroshi Doyu\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Features",
-      "About"
+      "Blog"
     ]
   }
 ]
