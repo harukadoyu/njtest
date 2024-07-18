@@ -259,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Here, we visualize the performance of three runtimes: PyTorch, our custom-built tinyRuntime (both non-quantized and quantized versions), using the ResNet18 model and 100 images from the Imagenette dataset. We focus on four key metrics: accuracy, execution time, model size and memory usage.</p>
 <section id="x86" class="level2">
 <h2 class="anchored" data-anchor-id="x86">x86</h2>
-<div id="fig-x86" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:50:20.157536Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:50:20.157328Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:50:23.052037Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:50:23.051356Z&quot;}" data-execution_count="1">
+<div id="fig-x86" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:56:50.729515Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:56:50.729311Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:56:51.861928Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:56:51.861350Z&quot;}" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -381,11 +381,12 @@ Figure&nbsp;1: Performance comparison on x86
 </section>
 <section id="arm" class="level2">
 <h2 class="anchored" data-anchor-id="arm">ARM</h2>
-<div id="fig-arm" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:50:23.054794Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:50:23.054420Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:50:23.328680Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:50:23.327984Z&quot;}" data-execution_count="2">
+<div id="fig-arm" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:56:51.864462Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:56:51.864254Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:56:52.133327Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:56:52.132684Z&quot;}" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_arm <span class="op">=</span> df[df[<span class="st">"Platform"</span>] <span class="op">==</span> <span class="st">"arm64"</span>]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plot_perf_comp(df_arm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bg_color <span class="op">=</span> <span class="st">"#002B36"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df_arm <span class="op">=</span> df[df[<span class="st">"Platform"</span>] <span class="op">==</span> <span class="st">"arm64"</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plot_perf_comp(df_arm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-arm-1" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -445,7 +446,7 @@ Figure&nbsp;2: Performance comparison on ARM
 </section>
 <section id="runtime-optimization-progress" class="level1">
 <h1>Runtime Optimization Progress</h1>
-<div id="cell-fig-time" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:50:23.331279Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:50:23.331070Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:50:23.534553Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:50:23.533844Z&quot;}" data-scrolled="true" data-execution_count="3">
+<div id="cell-fig-time" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:56:52.136078Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:56:52.135703Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:56:52.335964Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:56:52.335292Z&quot;}" data-scrolled="true" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_progress(ax, df):</span>
