@@ -259,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Here, we visualize the performance of three runtimes: PyTorch, our custom-built tinyRuntime (both non-quantized and quantized versions), using the ResNet18 model and 100 images from the Imagenette dataset. We focus on four key metrics: accuracy, execution time, model size and memory usage.</p>
 <section id="x86" class="level2">
 <h2 class="anchored" data-anchor-id="x86">x86</h2>
-<div id="fig-x86" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:47:24.095355Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:47:24.095158Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:47:25.207439Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:47:25.206728Z&quot;}" data-execution_count="1">
+<div id="fig-x86" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:50:20.157536Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:50:20.157328Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:50:23.052037Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:50:23.051356Z&quot;}" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -298,25 +298,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    memory_values <span class="op">=</span> plot_runtime_result(axs[<span class="dv">1</span>, <span class="dv">0</span>], <span class="st">"Max memory"</span>, df_pytorch, df_trv, df_trq, <span class="st">"Max memory usage (MB)"</span>)</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    model_size_values <span class="op">=</span> plot_runtime_result(axs[<span class="dv">1</span>, <span class="dv">1</span>], <span class="st">"Model size"</span>, df_pytorch, df_trv, df_trq, <span class="st">"Model size (MB)"</span>)</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create DataFrame</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> {</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Accuracy (%)"</span>: accuracy_values,</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Time (s)"</span>: time_values,</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Max memory usage (MB)"</span>: memory_values,</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Model size (MB)"</span>: model_size_values</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    df_results <span class="op">=</span> pd.DataFrame(data, index<span class="op">=</span>[<span class="st">"PyTorch"</span>, <span class="st">"tinyRuntime (no quant)"</span>, <span class="st">"tinyRuntime (quant)"</span>])</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    display(df_results)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Show legend for all subplots</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> [<span class="st">"PyTorch"</span>, <span class="st">"tinyRuntime (no quant)"</span>, <span class="st">"tinyRuntime (quant)"</span>]</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    bar_colors <span class="op">=</span> [<span class="st">'tab:blue'</span>, <span class="st">'tab:green'</span>, <span class="st">'tab:orange'</span>]</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    patches <span class="op">=</span> [plt.Rectangle((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">1</span>, <span class="dv">1</span>, color<span class="op">=</span>bar_colors[i], label<span class="op">=</span>labels[i]) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(labels))]</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    fig.legend(handles<span class="op">=</span>patches, loc<span class="op">=</span><span class="st">'lower center'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.05</span>), ncol<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    fig.patch.set_facecolor(bg_color) <span class="co"># set background color</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Show legend for all subplots</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> [<span class="st">"PyTorch"</span>, <span class="st">"tinyRuntime (no quant)"</span>, <span class="st">"tinyRuntime (quant)"</span>]</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    bar_colors <span class="op">=</span> [<span class="st">'tab:blue'</span>, <span class="st">'tab:green'</span>, <span class="st">'tab:orange'</span>]</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    patches <span class="op">=</span> [plt.Rectangle((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">1</span>, <span class="dv">1</span>, color<span class="op">=</span>bar_colors[i], label<span class="op">=</span>labels[i]) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(labels))]</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    fig.legend(handles<span class="op">=</span>patches, loc<span class="op">=</span><span class="st">'lower center'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.05</span>), ncol<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    fig.patch.set_facecolor(bg_color) <span class="co"># set background color</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create DataFrame</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> {</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Accuracy (%)"</span>: accuracy_values,</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Time (s)"</span>: time_values,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Max memory usage (MB)"</span>: memory_values,</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Model size (MB)"</span>: model_size_values</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    df_results <span class="op">=</span> pd.DataFrame(data, index<span class="op">=</span>[<span class="st">"PyTorch"</span>, <span class="st">"tinyRuntime (no quant)"</span>, <span class="st">"tinyRuntime (quant)"</span>])</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    display(df_results)</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>bg_color <span class="op">=</span> <span class="st">"#C2B3B0"</span></span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
@@ -324,9 +324,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>df_x86 <span class="op">=</span> df[df[<span class="st">"Platform"</span>] <span class="op">==</span> <span class="st">"x86_64"</span>]</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>plot_perf_comp(df_x86)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-x86-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<div class="cell-output cell-output-display">
+<div id="fig-x86-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-x86-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="hello_files/figure-html/fig-x86-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-x86-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Performance comparison on x86
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="fig-x86-2" class="cell-output cell-output-display">
 <div>
 
 
@@ -367,35 +377,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-x86-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Performance comparison on x86
-</figcaption>
-</figure>
-</div>
-<div class="cell-output cell-output-display">
-<div id="fig-x86-2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-x86-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="hello_files/figure-html/fig-x86-output-2.png" id="fig-x86-2" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-x86-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-</figcaption>
-</figure>
-</div>
-</div>
 </div>
 </section>
 <section id="arm" class="level2">
 <h2 class="anchored" data-anchor-id="arm">ARM</h2>
-<div id="fig-arm" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:47:25.210015Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:47:25.209807Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:47:25.481707Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:47:25.481152Z&quot;}" data-execution_count="2">
+<div id="fig-arm" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:50:23.054794Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:50:23.054420Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:50:23.328680Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:50:23.327984Z&quot;}" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_arm <span class="op">=</span> df[df[<span class="st">"Platform"</span>] <span class="op">==</span> <span class="st">"arm64"</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plot_perf_comp(df_arm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-arm-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<div class="cell-output cell-output-display">
+<div id="fig-arm-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-arm-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="hello_files/figure-html/fig-arm-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-arm-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Performance comparison on ARM
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="fig-arm-2" class="cell-output cell-output-display">
 <div>
 
 
@@ -436,28 +440,12 @@ Figure&nbsp;1: Performance comparison on x86
 
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-arm-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Performance comparison on ARM
-</figcaption>
-</figure>
-</div>
-<div class="cell-output cell-output-display">
-<div id="fig-arm-2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-arm-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="hello_files/figure-html/fig-arm-output-2.png" id="fig-arm-2" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-arm-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-</figcaption>
-</figure>
-</div>
-</div>
 </div>
 </section>
 </section>
 <section id="runtime-optimization-progress" class="level1">
 <h1>Runtime Optimization Progress</h1>
-<div id="cell-fig-time" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:47:25.484496Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:47:25.484093Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:47:25.683295Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:47:25.682753Z&quot;}" data-scrolled="true" data-execution_count="3">
+<div id="cell-fig-time" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-07-18T04:50:23.331279Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-07-18T04:50:23.331070Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-07-18T04:50:23.534553Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-07-18T04:50:23.533844Z&quot;}" data-scrolled="true" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_progress(ax, df):</span>
@@ -496,7 +484,7 @@ Figure&nbsp;3: Performance comparison on ARM
 <img src="hello_files/figure-html/fig-time-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Runtime performance improvement over time
+Figure&nbsp;3: Runtime performance improvement over time
 </figcaption>
 </figure>
 </div>
