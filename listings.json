@@ -3,6 +3,7 @@
     "listing": "/blog.html",
     "items": [
       "/blogs/iree.html",
+      "/blogs/test.html",
       "/blogs/aicompressionsaas.html",
       "/blogs/tinymlusecases.html"
     ]
